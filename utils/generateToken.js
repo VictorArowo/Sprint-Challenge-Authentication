@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const generateToken = user => {
+exports.generateToken = user => {
   const payload = {
     subject: user.id,
     department: user.name
@@ -13,4 +13,11 @@ const generateToken = user => {
   return jwt.sign(payload, 'very secret key from .env file', options);
 };
 
-module.exports = generateToken;
+exports.generateRefreshToken = user => {
+  const payload = {
+    subject: user.id,
+    department: user.name
+  };
+
+  return jwt.sign(payload, 'very secret key from .env file');
+};
