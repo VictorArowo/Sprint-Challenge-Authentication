@@ -38,13 +38,23 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What is the purpose of using _sessions_?
+- [x] What is the purpose of using _sessions_?
 
-- [ ] What does bcrypt do to help us store passwords in a secure manner.
+HTTP is stateless by default, thus sessions and cookies are used as a way of identifying users across multiple requests to the server.
 
-- [ ] What does bcrypt do to slow down attackers?
+- [x] What does bcrypt do to help us store passwords in a secure manner.
 
-- [ ] What are the three parts of the JSON Web Token?
+Bcrypt is a library used to hash strings. It uses the blowfish algorithm internally to perform this hashing operation.
+
+- [x] What does bcrypt do to slow down attackers?
+
+A random salt is generated whenever the hashing operation is performed this ensures that hashes are secure, and it also defeats the use of a rainbow table. It is also a slow algorithm as the hashing operation is performed multiple times, this greatly slows down brute-force attacks.
+
+- [x] What are the three parts of the JSON Web Token?
+
+- Header ⇒ Typically contains the algorithm used
+- Payload ⇒ Contains both private and public claims
+- Signature ⇒ A hash of the header + payload + a secret key
 
 ## Minimum Viable Product
 
