@@ -1,0 +1,11 @@
+POST http://localhost:3300/api/auth/login HTTP/1.1
+content-type: application/json
+
+{
+	"username": "fresh@fresh4.com",
+	"password": "pass123456"
+}
+
+###
+GET http://localhost:3300/api/jokes 
+Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo2LCJpYXQiOjE1NzM4MTIzMjYsImV4cCI6MTU3Mzg5ODcyNn0.Hk1nXMuWCEbImqiLYNeBiLanKSDBv8tdxfQy31APOA4"
