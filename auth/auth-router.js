@@ -28,6 +28,7 @@ router.post('/login', async (req, res) => {
 
   try {
     let user = await getUser(username);
+    console.log(user);
     if (!user) return res.status(400).json({ error: "User doesn't exist" });
 
     if (bcrypt.compareSync(password, user.password)) {
@@ -37,7 +38,7 @@ router.post('/login', async (req, res) => {
     }
     return res.status(401).json({ message: 'Invalid Credentials' });
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({ error: error.message });
   }
 });
 
