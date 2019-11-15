@@ -3,7 +3,6 @@ const db = require('../database/dbConfig');
 exports.getUser = username => {
   return db('users')
     .where('username', '=', username)
-    .select('users.id', 'users.username')
     .first();
 };
 
