@@ -1,0 +1,19 @@
+POST http://localhost:3300/api/auth/login HTTP/1.1
+content-type: application/json
+
+{
+	"username": "fresh@fresh4.com",
+	"password": "pass123456"
+}
+
+###
+GET http://localhost:3300/api/jokes 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo2LCJpYXQiOjE1NzM4MTIzNjAsImV4cCI6MTU3Mzg5ODc2MH0.BKjvXo2LSDgQfqiS6tlBczNMG3KVp_w1WkCfRYSvCw8
+
+###
+POST http://localhost:3300/api/auth/token
+content-type: application/json
+
+{
+	"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo2LCJpYXQiOjE1NzM4MTQwNDV9.bqPaTFGneK2W42uHHWN0df78dOeYk-Z7m93W-SRA6dw"
+}
